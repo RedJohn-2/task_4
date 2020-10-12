@@ -14,11 +14,11 @@ public class Main {
         System.out.print("Input n ");
         return scanner.nextInt();
     }
+
     static int findPalindromeN(int n) {
         int count = 0;
         for (int i = 0; ; i++) {
-            int mirrorNumber = findMirrorNumber(i);
-            if (checkNumber(mirrorNumber, i)) count++;
+            if (checkPalindrome(i)) count++;
             if (count == n) return i;
         }
     }
@@ -32,8 +32,8 @@ public class Main {
         return mirrorNumber;
     }
 
-    static boolean checkNumber(int mirrorNumber, int i) {
-        return mirrorNumber == i;
+    static boolean checkPalindrome(int i) {
+        return findMirrorNumber(i) == i;
     }
 
 
